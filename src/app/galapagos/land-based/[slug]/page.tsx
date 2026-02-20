@@ -38,7 +38,7 @@ export default async function TourPage({ params }: Props) {
         "@type": "Product",
         "name": tour.title,
         "description": tour.description,
-        "image": `https://example.com${tour.highlightImage}`,
+        "image": `https://eosecuador.com${tour.highlightImage}`,
         "offers": {
             "@type": "Offer",
             "price": tour.price.replace(/[^0-9.]/g, '') || "0",

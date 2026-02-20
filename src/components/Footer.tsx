@@ -34,43 +34,44 @@ export default function Footer() {
                     {/* Column 2: Contact (4 cols) */}
                     <div className="md:col-span-5 flex flex-col items-center md:items-start">
                         <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-1">Contact Us</h3>
-                        <div className="space-y-1 text-gray-300 text-xs font-light">
+                        <div className="space-y-1 text-gray-200 text-xs font-light">
                             <p>
                                 Phone:
                                 <a
                                     href="https://wa.me/593986945555"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="hover:text-[var(--color-brand-green)] transition-colors"
+                                    className="hover:text-[var(--color-brand-green)] transition-colors ml-1"
                                 >
                                     +593 98 694 5555
                                 </a>
                             </p>
-                            <p>Email: <a href="mailto:eos@eosecuador.com" className="hover:text-[var(--color-brand-green)] transition-colors">eos@eosecuador.com</a></p>
+                            <p>Email: <a href="mailto:eos@eosecuador.com" className="hover:text-[var(--color-brand-green)] transition-colors ml-1">eos@eosecuador.com</a></p>
                         </div>
                     </div>
 
                     {/* Column 3: Social Icons (2 cols - aligned right on desktop) */}
                     <div className="md:col-span-2 flex flex-col items-center md:items-end justify-start gap-2">
                         {/* Facebook */}
-                        <a href="#" className="transform hover:scale-110 transition-transform duration-300" aria-label="Facebook">
-
+                        <a href="https://facebook.com/eosecuador" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300 text-gray-300 hover:text-white text-xs font-light" aria-label="Facebook">
+                            Facebook
                         </a>
 
                         {/* Instagram */}
-                        <a href="#" className="transform hover:scale-110 transition-transform duration-300" aria-label="Instagram">
+                        <a href="https://instagram.com/eosecuador" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300 text-gray-300 hover:text-white text-xs font-light" aria-label="Instagram">
+                            Instagram
                         </a>
 
                         {/* TikTok */}
-                        <a href="#" className="transform hover:scale-110 transition-transform duration-300" aria-label="TikTok">
-
+                        <a href="#" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300 text-gray-300 hover:text-white text-xs font-light" aria-label="TikTok">
+                            TikTok
                         </a>
                     </div>
 
                 </div>
 
                 {/* Footer Bottom */}
-                <div className="text-center text-gray-400 text-xs font-light tracking-widest pt-2 border-t border-white/5">
+                <div className="text-center text-gray-300 text-xs font-light tracking-widest pt-2 border-t border-white/5">
                     <p className="text-xs">&copy; EOS Ecuador Travel. Developed by ECUADOR QUEST Company.&reg;</p>
                 </div>
             </div>

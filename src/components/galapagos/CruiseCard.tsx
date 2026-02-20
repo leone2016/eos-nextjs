@@ -36,11 +36,11 @@ export default function CruiseCard({ cruise, onClick, onBookClick }: CruiseCardP
             </Link>
             <div className="p-6 flex flex-col flex-grow text-center relative z-10 bg-white dark:bg-[#1a1a1a] -mt-2 mx-2 rounded-lg transition-colors">
                 <Link href={`/galapagos/cruises/${cruise.slug}`} onClick={handleDetailClick} className="block group/title">
-                    <h3 className="text-2xl font-serif font-bold text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors mb-3">
+                    <h2 className="text-2xl font-serif font-bold text-[var(--color-secondary-text)] hover:text-[var(--color-primary)] transition-colors mb-3">
                         {cruise.name}
-                    </h3>
+                    </h2>
                 </Link>
-                <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed flex-grow mb-4">
+                <p className="text-[var(--color-text-muted)] text-xs leading-relaxed flex-grow mb-4">
                     {cruise.description}
                 </p>
 
@@ -48,13 +48,13 @@ export default function CruiseCard({ cruise, onClick, onBookClick }: CruiseCardP
                     <Link
                         href={`/galapagos/cruises/${cruise.slug}`}
                         onClick={handleDetailClick}
-                        className="flex-1 px-4 py-2 border border-[var(--color-primary)] text-[var(--color-primary)] text-xs font-bold rounded-full hover:bg-[var(--color-primary)] hover:text-white transition-all text-center uppercase tracking-wider"
+                        className="flex-1 px-4 py-2 border border-[var(--color-primary)] text-[var(--color-primary-text)] text-xs font-bold rounded-full hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-fg)] transition-all text-center uppercase tracking-wider"
                     >
                         View Details
                     </Link>
                     <button
                         onClick={handleBookClick}
-                        className="flex-1 px-4 py-2 bg-[var(--color-primary)] text-white text-xs font-bold rounded-full hover:bg-[var(--color-primary-dark)] transition-all uppercase tracking-wider shadow-md hover:shadow-lg transform active:scale-95"
+                        className="flex-1 px-4 py-2 bg-[var(--color-primary)] text-[var(--color-primary-fg)] text-xs font-bold rounded-full hover:bg-[var(--color-primary-dark)] transition-all uppercase tracking-wider shadow-md hover:shadow-lg transform active:scale-95"
                     >
                         Book
                     </button>

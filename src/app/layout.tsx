@@ -28,7 +28,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://eosecuador.com"),
   title: {
     default: "EOS Ecuador | Sustainable Travel & Tours",
     template: "%s | EOS Ecuador",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "EOS Ecuador | Sustainable Travel & Tours",
     description: "Explore the best of Ecuador and Galapagos with our sustainable travel guides.",
-    url: "https://example.com",
+    url: "https://eosecuador.com",
     siteName: "EOS Ecuador",
     locale: "en_US",
     type: "website",

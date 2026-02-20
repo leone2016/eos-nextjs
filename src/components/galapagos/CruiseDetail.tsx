@@ -51,6 +51,10 @@ export default function CruiseDetail({ cruise }: CruiseDetailProps) {
                     {cruise.description}
                 </p>
 
+                <h2 className="text-3xl font-serif font-bold text-[var(--color-secondary)] mb-8">
+                    Technical Specifications & Safety
+                </h2>
+
                 {/* Technical Specifications & Safety */}
                 <div className="grid md:grid-cols-2 gap-12 mb-16 bg-gray-50 dark:bg-white/5 p-8 rounded-xl border border-gray-100 dark:border-gray-800 relative overflow-hidden">
 

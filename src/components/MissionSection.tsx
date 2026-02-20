@@ -11,7 +11,7 @@ export default function MissionSection() {
 
                 <h2 className="text-4xl md:text-6xl font-serif font-bold text-[var(--color-secondary)] dark:text-white mb-10 transition-colors tracking-tight leading-tight">
                     Sustainable Travel in <br />
-                    <span className="italic text-[var(--color-primary)] dark:text-[#a3d939]">Ecuador & Galapagos</span>
+                    <span className="italic text-[var(--color-primary-text)]">Ecuador & Galapagos</span>
                 </h2>
 
                 <div className="mx-auto text-lg md:text-xl text-gray-500 dark:text-gray-400 leading-relaxed font-light space-y-8 transition-colors max-w-4xl">
@@ -19,7 +19,7 @@ export default function MissionSection() {
                         Established in 2008, <span className="font-medium text-[var(--color-secondary)] dark:text-white">EOS Ecuador</span> is more than a travel agency; we are guardians of responsible tourism. We specialize in crafting unforgettable journeys, from private cruises in the Galapagos to deep immersion in the Amazon rainforest.
                     </p>
                     <p>
-                        Our philosophy is built on <span className="italic">personalization and purpose</span>. Each tour is tailored to your vision, allowing you to discover Ecuador's extraordinary biodiversity while contributing directly to local communities. Join us in exploring the beauty of our country, sustainably.
+                        Our philosophy is built on <span className="italic">personalization and purpose</span>. Each tour is tailored to your vision, allowing you to discover Ecuador&apos;s extraordinary biodiversity while contributing directly to local communities. Join us in exploring the beauty of our country, sustainably.
                     </p>
                 </div>
 

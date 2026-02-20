@@ -116,7 +116,7 @@ function CruisesBrowserContent() {
             />
 
             <section className="container mx-auto px-4 py-12">
-                <div className="mb-8 text-gray-500 text-sm">
+                <div className="mb-8 text-[var(--color-text-muted)] text-sm">
                     Showing {paginatedCruises.length} of {filteredCruises.length} cruises
                 </div>
 

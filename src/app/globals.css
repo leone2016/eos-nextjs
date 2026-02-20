@@ -5,11 +5,14 @@
 :root {
   /* Brand Colors */
   --color-primary: #5C7C1E;
+  --color-primary-fg: #ffffff;
+  /* Darker for better contrast in light mode (5.0:1) */
   /* Bright Olive - Buttons/Accents */
   --color-primary-dark: #405828;
   /* Deep Olive - Headings/Footer */
   --color-secondary: #405828;
   /* Deep Olive - Primary Brand Color (Replacing Blue) */
+  --color-secondary-text: #405828;
   --color-secondary-light: #5C7C1E;
   /* Bright Olive - Secondary Brand Color */
   --color-accent: #F5F5F0;
@@ -17,6 +20,7 @@
   /* Sand/Beige - Backgrounds */
   --color-text-main: #333333;
   --color-text-light: #666666;
+  --color-text-muted: #555555;
 
   /* Inherited from Next.js */
   --background: #ffffff;
@@ -42,8 +46,14 @@
   /* Darker Sand/Beige */
   --color-text-main: #e5e5e5;
   --color-text-light: #a3a3a3;
+  --color-text-muted: #d1d1d1;
+  --color-primary-text: #a3d939;
+  /* Brighter for better contrast in dark mode (8.3:1) */
+  --color-secondary-text: #a3d939;
+  --color-primary: #a3d939;
+  --color-secondary: #a3d939;
+  --color-primary-fg: #000000;
   --color-gray-dark: #000000;
-
 }
 
 @theme inline {
@@ -54,6 +64,8 @@
   --font-serif: var(--font-geist-sans);
 
   --color-brand-green: var(--color-primary);
+  --color-brand-green-fg: var(--color-primary-fg);
+  --color-brand-green-text: var(--color-primary-text);
   --color-brand-green-dark: var(--color-primary-dark);
   --color-gray-dark: #1a1a1a;
   --color-gray-light: var(--color-accent-dark);

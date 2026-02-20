@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import type { Metadata } from 'next';
 
@@ -13,9 +12,9 @@ export default function ClimbingPage() {
         "@context": "https://schema.org",
         "@type": "TouristDestination",
         "name": "Ecuadorian Andes",
-        "description": "A climber's paradise featuring the Avenue of the Volcanoes.",
-        "url": "https://example.com/climbing",
-        "image": "https://example.com/hero.jpg"
+        "description": "A climber&apos;s paradise featuring the Avenue of the Volcanoes.",
+        "url": "https://eosecuador.com/climbing",
+        "image": "https://eosecuador.com/hero.jpg"
     };
 
     return (
@@ -89,7 +88,7 @@ export default function ClimbingPage() {
                                 </div>
                             </div>
                             <div className="p-10">
-                                <p className="text-gray-500 dark:text-gray-400 mb-6 font-light leading-relaxed">Challenge yourself on Ecuador's iconic peaks like Cotopaxi, Cayambe, and Chimborazo with expert guides.</p>
+                                <p className="text-gray-500 dark:text-gray-400 mb-6 font-light leading-relaxed">Challenge yourself on Ecuador&apos;s iconic peaks like Cotopaxi, Cayambe, and Chimborazo with expert guides.</p>
                                 <span className="text-[var(--color-primary)] font-bold uppercase tracking-[0.2em] text-xs cursor-pointer">View Expeditions →</span>
                             </div>
                         </div>

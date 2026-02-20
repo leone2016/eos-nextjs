@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { NAVIGATION_ITEMS } from '@/data/navigation';
@@ -53,6 +54,14 @@ export default function Header() {
     const { theme, setTheme } = useTheme();
     const pathname = usePathname();
 
+    // Reset menu on route change during render
+    const [prevPathname, setPrevPathname] = useState(pathname);
+    if (pathname !== prevPathname) {
+        setPrevPathname(pathname);
+        if (isMenuOpen) setIsMenuOpen(false);
+        if (expandedMobileSubmenu) setExpandedMobileSubmenu(null);
+    }
+
     // Prevent scrolling when menu is open
     useEffect(() => {
         if (isMenuOpen) {
@@ -77,12 +86,6 @@ export default function Header() {
         return () => window.removeEventListener('keydown', handleEsc);
     }, []);
 
-    // Close menu on route change
-    useEffect(() => {
-        setIsMenuOpen(false);
-        setExpandedMobileSubmenu(null);
-    }, [pathname]);
-
     const toggleMobileSubmenu = (name: string) => {
         setExpandedMobileSubmenu(prev => prev === name ? null : name);
     };
@@ -92,7 +95,7 @@ export default function Header() {
             <header className="bg-[var(--color-gray-dark)] backdrop-blur-md sticky top-0 z-50 border-b border-white/10 shadow-sm transition-all duration-300">
                 <nav className="container mx-auto px-4 h-20 flex items-center justify-between" aria-label="Main Navigation">
                     <Link href="/" className="flex items-center group p-4 shrink-0">
-                        <img src="/logo-eos.svg" alt="EOS Ecuador Logo" className="w-40 h-20 object-contain" />
+                        <Image src="/logo-eos.svg" alt="EOS Ecuador Logo" width={160} height={80} className="w-40 h-20 object-contain" priority />
                     </Link>
 
                     {/* Desktop Menu */}
@@ -107,7 +110,7 @@ export default function Header() {
                                     >
                                         {item.name}
                                         {item.submenu && (
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3 h-3 mt-0.5 transition-transform group-hover:rotate-180">
+                                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3 h-3 mt-0.5 transition-transform group-hover:rotate-180">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                             </svg>
                                         )}
@@ -222,8 +225,8 @@ export default function Header() {
                 {/* Header of Sidebar (Colored) */}
                 <div className="bg-[var(--color-accent)] p-6 shrink-0 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white overflow-hidden">
-                            <img src="/logo-eos.svg" alt="Profile" className="w-full h-full object-cover p-1" />
+                        <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white overflow-hidden relative">
+                            <Image src="/logo-eos.svg" alt="EOS Ecuador Profile Logo" fill className="object-cover p-1" />
                         </div>
                         <div className='dark:hover:bg-white/5'>
                             <p className="font-bold text-black text-lg text-gray-800 dark:text-gray-200 dark:hover:bg-white/5">EOS Ecuador</p>
@@ -257,6 +260,7 @@ export default function Header() {
                                                 <span>{item.name}</span>
                                             </div>
                                             <svg
+                                                aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 fill="none"
                                                 viewBox="0 0 24 24"

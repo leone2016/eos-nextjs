@@ -20,8 +20,8 @@ export default function GalapagosPage() {
         "@type": "TouristDestination",
         "name": "Galapagos Islands",
         "description": "A volcanic archipelago in the Pacific Ocean. It's considered one of the world's foremost destinations for wildlife-viewing.",
-        "url": "https://example.com/galapagos",
-        "image": "https://example.com/galapagos_kicker_rock.png"
+        "url": "https://eosecuador.com/galapagos",
+        "image": "https://eosecuador.com/galapagos_kicker_rock.png"
     };
 
     return (
@@ -68,7 +68,7 @@ export default function GalapagosPage() {
                         Discover wildlife and stunning views in this <span className="text-[var(--color-primary)]">unforgettable place</span>.
                     </h2>
                     <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-xl font-light">
-                        Scout the Galapagos Islands with EOS through cruise or land-based tours; choose the style that suits you best. Enjoy competitive rates tailored to your budget, with special pricing based on availability and group size. We're committed to making your journey seamless, enriching, and unforgettable.
+                        Scout the Galapagos Islands with EOS through cruise or land-based tours; choose the style that suits you best. Enjoy competitive rates tailored to your budget, with special pricing based on availability and group size. We&apos;re committed to making your journey seamless, enriching, and unforgettable.
                     </p>
                 </div>
             </section>
@@ -86,6 +86,7 @@ export default function GalapagosPage() {
                                     alt="Galapagos Cruises"
                                     fill
                                     className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                                    sizes="(max-width: 768px) 100vw, 33vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-10">
                                     <div>
@@ -96,7 +97,7 @@ export default function GalapagosPage() {
                             </div>
                             <div className="p-10">
                                 <p className="text-gray-500 dark:text-gray-400 mb-6 font-light leading-relaxed">Explore the Galapagos on a breathtaking cruise with options for every budget and personalized guidance.</p>
-                                <span className="text-[var(--color-primary)] font-bold uppercase tracking-[0.2em] text-xs">Explore Cruises →</span>
+                                <span className="text-[var(--color-primary-text)] font-bold uppercase tracking-[0.2em] text-xs">Explore Cruises →</span>
                             </div>
                         </Link>
 
@@ -108,6 +109,7 @@ export default function GalapagosPage() {
                                     alt="Galapagos Land Based Tours"
                                     fill
                                     className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                                    sizes="(max-width: 768px) 100vw, 33vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-10">
                                     <div>
@@ -118,7 +120,7 @@ export default function GalapagosPage() {
                             </div>
                             <div className="p-10">
                                 <p className="text-gray-500 dark:text-gray-400 mb-6 font-light leading-relaxed">Scout the Galapagos on a land-based journey with expert guidance and handpicked accommodations.</p>
-                                <span className="text-[var(--color-primary)] font-bold uppercase tracking-[0.2em] text-xs">Explore Tours →</span>
+                                <span className="text-[var(--color-primary-text)] font-bold uppercase tracking-[0.2em] text-xs">Explore Tours →</span>
                             </div>
                         </Link>
 
@@ -130,6 +132,7 @@ export default function GalapagosPage() {
                                     alt="Galapagos Diving Tours - Hammerhead Sharks"
                                     fill
                                     className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                                    sizes="(max-width: 768px) 100vw, 33vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-10">
                                     <div>
@@ -140,7 +143,7 @@ export default function GalapagosPage() {
                             </div>
                             <div className="p-10">
                                 <p className="text-gray-500 dark:text-gray-400 mb-6 font-light leading-relaxed">Discover the underwater wonders of the marine reserve with our specialized diving cruises.</p>
-                                <span className="text-[var(--color-primary)] font-bold uppercase tracking-[0.2em] text-xs">Explore Diving →</span>
+                                <span className="text-[var(--color-primary-text)] font-bold uppercase tracking-[0.2em] text-xs">Explore Diving →</span>
                             </div>
                         </Link>
 

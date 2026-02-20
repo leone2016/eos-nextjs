@@ -9,10 +9,10 @@ export default function Hero() {
                     src="/hero.jpg"
                     alt="Tropical paradise landscape with beach and sunset"
                     fill
-                    priority
-                    className="object-cover object-center opacity-90"
                     sizes="100vw"
                     quality={95}
+                    priority
+                    fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-black/40 z-10" />
             </div>
@@ -28,7 +28,7 @@ export default function Hero() {
 
                 <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-white mb-8 tracking-tight drop-shadow-2xl leading-[0.9]">
                     Explore <br />
-                    <span className="italic text-[var(--color-primary)]">The Galapagos</span>
+                    <span className="italic text-[var(--color-primary-text)]">The Galapagos</span>
                 </h1>
 
                 <p className="text-lg md:text-2xl text-gray-100 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-light">

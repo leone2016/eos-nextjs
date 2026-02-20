@@ -24,8 +24,8 @@ export default function CruiseFilters({
                             key={cat}
                             onClick={() => onCategoryChange(cat)}
                             className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${selectedCategory === cat
-                                    ? 'bg-[var(--color-brand-green)] text-white border-[var(--color-brand-green)]'
-                                    : 'bg-white dark:bg-transparent text-gray-600 dark:text-gray-300 border-gray-200 dark:border-white/20 hover:border-[var(--color-brand-green)] hover:text-[var(--color-brand-green)]'
+                                ? 'bg-[var(--color-brand-green)] text-[var(--color-primary-fg)] border-[var(--color-brand-green)]'
+                                : 'bg-white dark:bg-transparent text-gray-600 dark:text-gray-300 border-gray-200 dark:border-white/20 hover:border-[var(--color-brand-green)] hover:text-[var(--color-brand-green)]'
                                 }`}
                         >
                             {cat}

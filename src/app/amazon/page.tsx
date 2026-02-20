@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import type { Metadata } from 'next';
 
@@ -14,8 +13,8 @@ export default function AmazonPage() {
         "@type": "TouristDestination",
         "name": "Amazon Rainforest",
         "description": "The world's largest tropical rainforest, home to unmatched biodiversity.",
-        "url": "https://example.com/amazon",
-        "image": "https://example.com/amazon.png"
+        "url": "https://eosecuador.com/amazon",
+        "image": "https://eosecuador.com/amazon.png"
     };
 
     return (
@@ -59,7 +58,7 @@ export default function AmazonPage() {
             <section className="relative py-24 -mt-12 z-20">
                 <div className="container mx-auto px-4 max-w-4xl text-center">
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-[var(--color-secondary)] dark:text-white mb-8 leading-tight">
-                        Immerse yourself in the world's <span className="text-[var(--color-primary)]">most biodiverse</span> ecosystem.
+                        Immerse yourself in the world&apos;s <span className="text-[var(--color-primary)]">most biodiverse</span> ecosystem.
                     </h2>
                     <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-xl font-light">
                         Discover the magic of the Ecuadorian Amazon. From deep jungle expeditions to comfortable eco-lodges, we offer experiences that connect you with nature and local cultures. Witness vibrant wildlife, canoe through winding rivers, and learn the secrets of the rainforest.

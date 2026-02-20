@@ -14,7 +14,7 @@ export default function GalapagosDivingPage() {
         "@type": "TouristList",
         "name": "Galapagos Diving Cruises",
         "description": "Liveaboard diving expeditions in Galapagos",
-        "url": "https://example.com/galapagos/diving"
+        "url": "https://eosecuador.com/galapagos/diving"
     };
 
     return (

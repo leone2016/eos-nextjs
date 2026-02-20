@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import InquiryForm from '@/components/InquiryForm';
 import type { Metadata } from 'next';
@@ -14,7 +13,7 @@ export default function ContactPage() {
         "@context": "https://schema.org",
         "@type": "TravelAgency",
         "name": "EOS Ecuador Travel",
-        "image": "https://example.com/logo-eos.svg",
+        "image": "https://eosecuador.com/logo-eos.svg",
         "telephone": "+593 98 694 5555",
         "email": "eos@eosecuador.com",
         "address": {
@@ -54,7 +53,7 @@ export default function ContactPage() {
                         Begin Your Journey
                     </span>
                     <h1 className="text-6xl md:text-8xl font-serif font-bold mb-8 drop-shadow-2xl tracking-tight leading-[0.9]">
-                        Let's Plan <br />
+                        Let&apos;s Plan <br />
                         <span className="italic text-[var(--color-primary)]">Something Extraordinary</span>
                     </h1>
                 </div>
@@ -123,7 +122,7 @@ export default function ContactPage() {
                                                 {item.icon}
                                             </div>
                                             <div>
-                                                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500 mb-0.5">{item.subtitle}</h4>
+                                                <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-0.5">{item.subtitle}</h3>
                                                 {item.link ? (
                                                     <a href={item.link} className="text-lg font-bold text-[var(--color-secondary)] dark:text-gray-200 hover:text-[var(--color-primary)] transition-colors">
                                                         {item.value}

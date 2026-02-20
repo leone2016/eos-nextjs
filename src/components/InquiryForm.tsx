@@ -22,7 +22,7 @@ const INTERESTS = [
         label: 'Amazon Lodges',
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.856.12-1.683.344-2.467" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 0.778-0.099 1.533-0.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-0.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-0.856 0.12-1.683 0.344-2.467" />
             </svg>
         )
     },
@@ -79,7 +79,7 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
             ...prev,
             interests: {
                 ...prev.interests,
-                //@ts-ignore
+                //@ts-expect-error - Dynamic key access on interests object
                 [id]: !prev.interests[id]
             }
         }));
@@ -126,9 +126,10 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
                             {/* Passengers */}
                             <div className="lg:col-span-4 grid grid-cols-2 gap-4">
                                 <div>
-                                    <label className={labelClasses}>Adults</label>
+                                    <label htmlFor="adults" className={labelClasses}>Adults</label>
                                     <div className="relative group">
                                         <input
+                                            id="adults"
                                             type="number"
                                             name="adults"
                                             min="1"
@@ -143,8 +144,9 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className={labelClasses}>Children</label>
+                                    <label htmlFor="children" className={labelClasses}>Children</label>
                                     <input
+                                        id="children"
                                         type="number"
                                         name="children"
                                         min="0"
@@ -161,7 +163,6 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
                                     <div
                                         key={item.id}
                                         onClick={() => toggleInterest(item.id)}
-                                        //@ts-ignore
                                         className={`relative p-5 rounded-2xl border-2 transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-3 text-center
                                             ${formData.interests[item.id as keyof typeof formData.interests]
                                                 ? 'bg-[var(--color-primary)] border-[var(--color-primary)] text-white shadow-[0_10px_20px_rgba(92,124,30,0.2)]'
@@ -192,7 +193,9 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
                             <h3 className="text-2xl font-serif font-bold text-[var(--color-secondary)] dark:text-white">Your Vision</h3>
                         </div>
                         <div className="relative">
+                            <label htmlFor="comments" className="sr-only">Detailed Inquiry Comments</label>
                             <textarea
+                                id="comments"
                                 name="comments"
                                 rows={6}
                                 value={formData.comments}
@@ -224,13 +227,14 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
                                 { name: 'agencyName', label: 'Travel Agency', placeholder: 'If applicable', type: 'text' }
                             ].map((field) => (
                                 <div key={field.name} className="space-y-1">
-                                    <label className={labelClasses}>{field.label}</label>
+                                    <label htmlFor={field.name} className={labelClasses}>{field.label}</label>
                                     <input
+                                        id={field.name}
                                         type={field.type}
                                         name={field.name}
                                         required={field.required}
-                                        //@ts-ignore
-                                        value={formData[field.name]}
+                                        //@ts-expect-error - Dynamic field name access
+                                        value={formData[field.name as keyof typeof formData]}
                                         onChange={handleChange}
                                         className={inputClasses}
                                         placeholder={field.placeholder}
@@ -239,9 +243,10 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
                             ))}
 
                             <div className="space-y-1">
-                                <label className={labelClasses}>Discovery Channel</label>
+                                <label htmlFor="howFound" className={labelClasses}>Discovery Channel</label>
                                 <div className="relative">
                                     <select
+                                        id="howFound"
                                         name="howFound"
                                         value={formData.howFound}
                                         onChange={handleChange}
@@ -265,9 +270,10 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
 
                     {/* Submit Area */}
                     <div className="pt-10 border-t border-gray-100 dark:border-white/5 flex flex-col items-center">
-                        <label className="flex items-center group cursor-pointer mb-10 w-full max-w-lg">
+                        <label htmlFor="newsletter" className="flex items-center group cursor-pointer mb-10 w-full max-w-lg">
                             <div className="relative flex items-center justify-center flex-none">
                                 <input
+                                    id="newsletter"
                                     type="checkbox"
                                     name="newsletter"
                                     checked={formData.newsletter}
@@ -285,7 +291,7 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
 
                         <button
                             type="submit"
-                            className="group relative inline-flex items-center justify-center px-12 py-6 font-black text-white transition-all duration-500 bg-[var(--color-primary)] rounded-[2rem] hover:bg-[var(--color-primary-dark)] shadow-[0_15px_30px_rgba(92,124,30,0.3)] hover:-translate-y-2 active:scale-95 overflow-hidden w-full md:w-auto"
+                            className="group relative inline-flex items-center justify-center px-12 py-6 font-black text-white dark:text-black transition-all duration-500 bg-[var(--color-primary)] rounded-[2rem] hover:bg-[var(--color-primary-dark)] shadow-[0_15px_30px_rgba(92,124,30,0.3)] hover:-translate-y-2 active:scale-95 overflow-hidden w-full md:w-auto"
                         >
                             <span className="relative z-10 text-lg uppercase tracking-[0.3em]">Send Inquiry</span>
                             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
@@ -294,13 +300,13 @@ export default function InquiryForm({ selectedBoat }: InquiryFormProps) {
                         <div className="mt-10 flex items-center gap-6 text-xs text-gray-600 dark:text-gray-300 font-bold uppercase tracking-widest bg-gray-50 dark:bg-white/5 px-8 py-3 rounded-full">
                             <span className="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-[var(--color-primary)]">
-                                    <path fillRule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clipRule="evenodd" />
+                                    <path fillRule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-0.5V5.5A4.5 4.5 0 0 0 10 1ZM13 9V5.5a3 3 0 1 0-6 0V9h6Z" clipRule="evenodd" />
                                 </svg>
                                 SSL Secure
                             </span>
                             <span className="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-[var(--color-primary)]">
-                                    <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 4.343a.75.75 0 0 1 0 1.06l-1.061 1.061a.75.75 0 1 1-1.06-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM6.464 13.536a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 0 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5V10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM15.657 15.657a.75.75 0 0 1-1.06 0l-1.061-1.06a.75.75 0 0 1 1.06-1.061l1.061 1.06a.75.75 0 0 1 0 1.061ZM6.464 6.464a.75.75 0 0 1-1.06 0l-1.061-1.06a.75.75 0 0 1 1.061-1.061l1.06 1.06a.75.75 0 0 1 0 1.061Z" />
+                                    <path d="M10 2a0.75 0.75 0 0 1 0.75 0.75v1.5a0.75 0.75 0 0 1-1.5 0v-1.5A0.75 0.75 0 0 1 10 2ZM10 15a0.75 0.75 0 0 1 0.75 0.75v1.5a0.75 0.75 0 0 1-1.5 0v-1.5A0.75 0.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 4.343a0.75 0.75 0 0 1 0 1.06l-1.061 1.061a0.75 0.75 0 1 1-1.06-1.06l1.06-1.061a0.75 0.75 0 0 1 1.061 0ZM6.464 13.536a0.75 0.75 0 0 1 0 1.06l-1.06 1.061a0.75 0.75 0 0 1-1.061-1.06l1.06-1.061a0.75 0.75 0 0 1 1.061 0ZM18 10a0.75 0.75 0 0 1-0.75 0.75h-1.5a0.75 0.75 0 0 1 0-1.5h1.5A0.75 0.75 0 0 1 18 10ZM5 10a0.75 0.75 0 0 1-0.75 0.75h-1.5a0.75 0.75 0 0 1 0-1.5h1.5A0.75 0.75 0 0 1 5 10ZM15.657 15.657a0.75 0.75 0 0 1-1.06 0l-1.061-1.06a0.75 0.75 0 0 1 1.06-1.061l1.061 1.06a0.75 0.75 0 0 1 0 1.061ZM6.464 6.464a0.75 0.75 0 0 1-1.06 0l-1.061-1.06a0.75 0.75 0 0 1 1.061-1.061l1.06 1.06a0.75 0.75 0 0 1 0 1.061Z" />
                                 </svg>
                                 24h Response
                             </span>

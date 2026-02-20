@@ -14,8 +14,8 @@ export default function CustomToursPage() {
         "@type": "Service",
         "name": "Custom Tours Ecuador",
         "description": "Bespoke travel planning services for Ecuador and Galapagos.",
-        "url": "https://example.com/custom-tours",
-        "image": "https://example.com/hero.png"
+        "url": "https://eosecuador.com/custom-tours",
+        "image": "https://eosecuador.com/hero.png"
     };
 
     return (

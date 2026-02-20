@@ -15,11 +15,11 @@ export default function GalapagosCruisesPage() {
         "@type": "TouristList",
         "name": "Galapagos Cruises",
         "description": "Selection of cruise ships for Galapagos expeditions",
-        "url": "https://example.com/galapagos/cruises",
+        "url": "https://eosecuador.com/galapagos/cruises",
         "itemListElement": cruises.map((cruise, index) => ({
             "@type": "ListItem",
             "position": index + 1,
-            "url": `https://example.com/galapagos/cruises/${cruise.slug}`,
+            "url": `https://eosecuador.com/galapagos/cruises/${cruise.slug}`,
             "name": cruise.name
         }))
     };

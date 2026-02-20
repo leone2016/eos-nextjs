@@ -15,11 +15,11 @@ export default function GalapagosLandBasedPage() {
         "@type": "TouristList",
         "name": "Galapagos Land Based Tours",
         "description": "Island hopping and hotel-based tours in Galapagos",
-        "url": "https://example.com/galapagos/land-based",
+        "url": "https://eosecuador.com/galapagos/land-based",
         "itemListElement": landBasedTours.map((tour, index) => ({
             "@type": "ListItem",
             "position": index + 1,
-            "url": `https://example.com/galapagos/land-based/${tour.slug}`,
+            "url": `https://eosecuador.com/galapagos/land-based/${tour.slug}`,
             "name": tour.title
         }))
     };

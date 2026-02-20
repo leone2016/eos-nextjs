@@ -58,17 +58,13 @@ export default function DestinationPreview() {
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                                     </div>
 
-                                    {/* Small floating badge */}
-                                    <div className={`absolute -bottom-6 ${index % 2 === 0 ? '-right-6' : '-left-6'} bg-white dark:bg-[#1a1a1a] p-4 rounded-2xl shadow-xl hidden md:block border border-gray-100 dark:border-white/5`}>
-                                        <div className="w-12 h-1 bg-[var(--color-primary)] rounded-full mb-2"></div>
-                                        <p className="text-xs font-bold uppercase tracking-widest text-[var(--color-secondary)] dark:text-white">Discover</p>
-                                    </div>
+
                                 </div>
 
                                 {/* Content side */}
                                 <div className="w-full lg:w-2/5 space-y-8">
                                     <div className="space-y-4">
-                                        <p className="text-xs font-bold tracking-[0.4em] uppercase text-[var(--color-primary)]">
+                                        <p className="text-xs font-bold tracking-[0.4em] uppercase text-[var(--color-primary-text)]">
                                             {dest.subtitle}
                                         </p>
                                         <h3 className="text-4xl md:text-6xl font-serif font-bold text-[var(--color-secondary)] dark:text-white leading-tight">

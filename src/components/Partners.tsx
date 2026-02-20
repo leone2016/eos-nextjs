@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Partners() {
     // Placeholder layout for logos
     const partners = [
@@ -21,11 +23,20 @@ export default function Partners() {
                     Partners &amp; Providers
                 </h3>
                 <div className="flex flex-wrap justify-center items-center gap-12 transition-all duration-500">
-                    {partners.map((partner, i) => (
-                        <div key={i} className="h-20 w-36 bg-[var(--color-accent)] rounded-lg shadow-sm flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
-                            <img src={partner} alt="Partner Logo" className="w-full h-full object-contain" />
-                        </div>
-                    ))}
+                    {partners.map((partner, i) => {
+                        const partnerName = partner.split('/').pop()?.split('.')[0] || 'Partner';
+                        return (
+                            <div key={i} className="h-20 w-36 bg-[var(--color-accent)] rounded-lg shadow-sm flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300">
+                                <Image
+                                    src={`/${partner}`}
+                                    alt={`${partnerName} Logo`}
+                                    width={144}
+                                    height={80}
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>
